@@ -2,8 +2,8 @@
 "encoding": "UTF-8",
 "headers": {
   "/*": {
-    "X-Author": "matvuric",
-    "Access-Control-Allow-Origin":"*"
+    "X-Author": "Матвиив, Кирилл Александрович",
+    "Access-Control-Allow-Origin": "*"
     }
   }  
 }
