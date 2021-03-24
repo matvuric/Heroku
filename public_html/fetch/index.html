@@ -4,17 +4,17 @@
   <title>Страница Fetch</title><meta charset="utf-8">
  </head>
  <body>
-    <input id = "in">
+    <input id = "inp">
     <button id = "bt">
-      Кнопка  
+      Щелкни  
     </button>
  </body>
  <script>
   bt.addEventListener("click", async () => {
-  const input = document.querySelector('#in').value;
+  const input = document.querySelector('#inp').value;
   const response = await fetch(input);
   const result = await response.text();
-  document.querySelector('#in').value = result;
+  document.querySelector('#inp').value = result;
   });
  </script>
 </html>
