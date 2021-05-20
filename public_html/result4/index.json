@@ -1,0 +1,29 @@
+var http = require("http");
+
+const s = http.createServer((req, res) => {
+
+    let CORS = {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET,PUT,POST,DELETE",
+        "Access-Control-Allow-Headers":
+        "x-test,Content-Type,Accept,Access-Control-Allow-Headers",
+      };
+
+    var result = {
+        message: "matvar",
+        "x-result": req.headers["x-test"],
+    }
+
+    var body = '';
+
+    if (req.url === '/result4/') {
+        req
+        .on("data", (data) => (body += data))
+        .on("end", () => {
+            res.writeHead(200, {...CORS, "Content-Type": "application/json"});
+            result["x-body"] = body;
+            res.end(JSON.stringify(result));
+        });
+        console.log(typeof(req));
+    }
+}).listen(4321);
